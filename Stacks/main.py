@@ -32,3 +32,41 @@ print("Top element (peek):", peek)  # Output: Bprint("Is stack empty?", x)  # Ou
 
 # Get the current size of the stack
 size = len(stack)  
+print("Current stack size:", size)  # Output: 2
+
+
+print("\n--- Stack Implementation using Class ---\n")
+
+class Stack: 
+    def __init__(self):
+        self.stack = []
+
+    def push (self, item):
+        self.stack.append(item)
+
+    def pop(self):
+        if self.isEmpty():
+            return "Stack is empty"
+        return self.stack.pop()
+    def peek(self):
+        if self.isEmpty():
+            return "Stack is empty"
+        return self.stack[-1]
+    def isEmpty(self):
+        return len(self.stack) == 0
+    def size(self):
+        return len(self.stack)
+    
+
+myStack = Stack()
+myStack.push("X")
+myStack.push("Y")
+myStack.push("Z")
+print("Stack:", myStack.stack)
+
+print("Popped element:", myStack.pop())  # Output: Z
+print("Stack after pop:", myStack.stack)
+
+print("Is stack empty?", myStack.isEmpty())
+print("Top element (peek):", myStack.peek())  # Output: Y
+print("Current stack size:", myStack.size())  # Output: 2
